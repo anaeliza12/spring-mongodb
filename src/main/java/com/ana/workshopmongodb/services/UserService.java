@@ -1,7 +1,6 @@
 package com.ana.workshopmongodb.services;
 
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,7 +24,15 @@ public class UserService {
 	}
 
 	public User findById(String id) {
-		Optional<User> obj = repository.findById(id);
-		return obj.orElseThrow(() -> new ObjectNotFoundException("Object not found"));
+		List<User> list = repository.findAll();
+		User user = null;
+		for (User u : list) {
+			if (u.getId().equals(id)) {
+				user = new User(u.getId(), u.getName(), u.getEmail());
+				break;
+			} else
+				throw new ObjectNotFoundException("Object not found");
+		}
+		return user;
 	}
 }
