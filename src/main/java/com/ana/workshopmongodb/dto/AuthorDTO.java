@@ -1,25 +1,26 @@
 package com.ana.workshopmongodb.dto;
 
+import java.io.Serializable;
+
 import com.ana.workshopmongodb.entities.User;
 
-public class UserDTO {
+public class AuthorDTO implements Serializable{
 
+	private static final long serialVersionUID = 1L;
 	
+
 	private String id;
 	private String name;
-	private String email;
-
-	public UserDTO() {
-
-	}
-
-	public UserDTO(User obj) {
-		id = obj.getId();
-		setName(obj.getName());
-		setEmail(obj.getEmail());
-	}
-
 	
+	public AuthorDTO() {
+		
+	}
+	
+	public AuthorDTO(User user) {
+		id = user.getId();
+		name = user.getName();
+	}
+
 	public String getId() {
 		return id;
 	}
@@ -35,12 +36,6 @@ public class UserDTO {
 	public void setName(String name) {
 		this.name = name;
 	}
-
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
+	
+	
 }
