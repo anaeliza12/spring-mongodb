@@ -1,28 +1,35 @@
 package com.ana.workshopmongodb.entities;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 import java.util.Objects;
 
-public class Post {
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
+@Document(collection = "post")
+public class Post implements Serializable {
+
+	private static final long serialVersionUID = 1L;
+	
+	@Id
 	private String id;
 	private Date date;
 	private String title;
 	private String body;
-	private List<Comment> comments;
+
 	private User user;
 
 	public Post() {
 
 	}
 
-	public Post(String id, Date date, String title, String body, List<Comment> comments, User user) {
+	public Post(String id, Date date, String title, String body,  User user) {
 		this.id = id;
 		this.date = date;
 		this.title = title;
 		this.body = body;
-		this.comments = comments;
 		this.user = user;
 	}
 
@@ -58,13 +65,6 @@ public class Post {
 		this.body = body;
 	}
 
-	public List<Comment> getComments() {
-		return comments;
-	}
-
-	public void setComments(List<Comment> comments) {
-		this.comments = comments;
-	}
 
 	public User getUser() {
 		return user;
