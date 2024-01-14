@@ -1,6 +1,7 @@
 package com.ana.workshopmongodb.config;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.TimeZone;
 
@@ -37,11 +38,13 @@ public class Instantiation implements CommandLineRunner {
 		userRepsository.saveAll(Arrays.asList(maria, alex, bob));
 
 		Post post1 = new Post(null, stf.parse("21/03/2018"), "Partiu viagem", "Vou viajar para São Paulo, abraços!",
-			new AuthorDTO(maria));
+				new AuthorDTO(maria));
 		Post post2 = new Post(null, stf.parse("23/03/2018"), "Bom dia!", "Acordei feliz hoje!", new AuthorDTO(maria));
 
 		postRepository.saveAll(Arrays.asList(post1, post2));
 
+		maria.getPosts().addAll(Arrays.asList(post1, post2));
+		userRepsository.save(maria);
 
 	}
 
