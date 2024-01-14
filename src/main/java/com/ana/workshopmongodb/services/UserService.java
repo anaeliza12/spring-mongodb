@@ -1,5 +1,6 @@
 package com.ana.workshopmongodb.services;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -29,6 +30,7 @@ public class UserService {
 		for (User u : list) {
 			if (u.getId().equals(id)) {
 				user = new User(u.getId(), u.getName(), u.getEmail());
+				user.getPosts().addAll(u.getPosts());
 				break;
 			} else
 				throw new ObjectNotFoundException("Object not found");

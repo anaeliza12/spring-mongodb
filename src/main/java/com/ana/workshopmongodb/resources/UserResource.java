@@ -17,6 +17,7 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import org.springframework.web.util.UriBuilder;
 
 import com.ana.workshopmongodb.dto.UserDTO;
+import com.ana.workshopmongodb.entities.Post;
 import com.ana.workshopmongodb.entities.User;
 import com.ana.workshopmongodb.services.UserService;
 
@@ -64,4 +65,13 @@ public class UserResource {
 		service.update(obj);
 		return ResponseEntity.noContent().build();
 	}
+
+	@GetMapping(value = "/{id}/posts")
+	public ResponseEntity<List<Post>> findPosts(@PathVariable String id) {
+
+		User obj = service.findById(id);
+
+		return ResponseEntity.ok(obj.getPosts());
+	}
+
 }
