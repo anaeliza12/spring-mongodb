@@ -20,7 +20,6 @@ public class PostService {
 	@Autowired
 	private PostRepository repository;
 
-
 	public Post findById(String id) {
 		List<Post> list = repository.findAll();
 		Post post = null;
@@ -34,8 +33,8 @@ public class PostService {
 		return post;
 	}
 
+	public List<Post> findByTitle(String text) {
+		return repository.findByTitleContainingIgnoreCase(text);
+	}
 
-	
-	
-	 
 }
