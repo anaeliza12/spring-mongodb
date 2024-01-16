@@ -2,6 +2,10 @@ package com.ana.workshopmongodb.resources.util;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
+import java.sql.Date;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.TimeZone;
 
 public class URL {
 	
@@ -10,6 +14,17 @@ public class URL {
 			return URLDecoder.decode(text, "UTF-8");
 		} catch (UnsupportedEncodingException e) {
 			return "";
+		}
+	}
+	
+	public static java.util.Date convertDate( String textDate, java.util.Date defaultValue){
+		SimpleDateFormat sdf = new SimpleDateFormat("yyy-MM-dd");
+		sdf.setTimeZone(TimeZone.getTimeZone("GMT"));
+		
+		try {
+			return sdf.parse(textDate);
+		} catch (ParseException e) {
+			return defaultValue;
 		}
 	}
 
