@@ -77,8 +77,7 @@ Send a GET request to http://localhost:8080/posts/fullsearch to find a post that
     ]
 }
 ```
-# Testing with Postman
-You can use Postman to test the API endpoints. Import the provided Postman collection for easy testing.
+# Testing with Postman  <a href="https://postman.com" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg" alt="postman" width="40" height="40"/> </a> <a href="https://spring.io/" target="_blank" rel="noreferrer"> 
 
 
 # Used Technologies
