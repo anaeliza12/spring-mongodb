@@ -7,9 +7,6 @@ API aimed at managing posts and comments made by users using the non-relational 
 ![image](https://github.com/anaeliza12/workshop-spring-mongodb/assets/108037430/49c12b6e-91fd-4d68-ad4a-7e9c2f71b315)
 
 
-## Example
-![image](https://github.com/anaeliza12/workshop-spring-mongodb/assets/108037430/3a166e2d-931b-41de-b9b7-ddb54e827c82)
-
 
 # Software Architecture Pattern — Layered Architecture
 ![image](https://github.com/anaeliza12/workshop-spring-mongodb/assets/108037430/c4f37cde-c7da-4faf-abfb-0177acd3cd35)
