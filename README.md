@@ -94,4 +94,4 @@ Send a GET request to http://localhost:8080/posts/fullsearch to find a post that
 
 Ana Eliza Perobelli
 
-https://www.linkedin.com/in/ana-eliza-perobelli-772460220/
+https://www.linkedin.com/in/ana-eliza-perobelli/
